@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/templatemo-main.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://th.bing.com/th/id/OIP.sozEffaFYG7dOrvky-dmywHaHa?rs=1&pid=ImgDetMain" alt="Logo" class="navbar-logo"> Bukit Bangkirai
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                    <a class="nav-link" href="map.html">Map & Message</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Gallery About Bukit Bangkirai</h1>
+        <div class="top-content">
+            <h3>Photo & Video</h3>
+        </div>
+        <div class="photo-gallery">
+            <div class="pic open">
+                <img src="img/home2.jpg" data-description="Gerbang Masuk Bukit Bangkirai">
+            </div>
+            <div class="pic open">
+                <img src="img/gallery5.jpg" data-description="Suasana Jalan Menuju Bukit Bangkirai">
+            </div>
+            <div class="pic open">
+                <img src="img/gallery0.jpg" data-description="Pintu Masuk Lamin Bangkirai">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery3.jpg" data-description="Jalan Menuju Menara Pohon">
+            </div>
+            <div class="pic brige">
+                <img src="img/about2.jpg" data-description="Tangga Menuju Jembatan Pohon">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery2.jpg" data-description="Jembatan Pohon Pertama">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery7.jpg" data-description="Jembatan Pohon Kedua">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery8.jpg" data-description="Aturan Saat Berada Di Atas Pohon">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery6.jpg" data-description="Jembatan Pohon Ketiga">
+            </div>
+            <div class="pic brige">
+                <img src="img/about1.jpg" data-description="Jembatan Pohon Keempat">
+            </div>
+            <div class="pic brige">
+                <img src="img/gallery4.jpg" data-description="Suasana Piknik Keluarga">
+            </div>
+            <div class="pic brige">
+                <img src="img/kuving.jpg" data-description="Kucing">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#">Back To Top</a>
+                    </div>
+                    <ul>
+                        <li><a href="https://www.facebook.com/BukitBangkirai/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.bing.com/search?q=bukit+bangkirai&qs=OS&pq=bukit+ben&sk=SS2CT1&sc=10-9&cvid=67A896F860474A4A9CB2DC7654AAC172&FORM=QBRE&sp=4&ghc=1&lq=0"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                    <p> Get Know More About Bukit Bangkirai</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup and Overlay -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <span class="close" id="close">&times;</span>
+        <img class="popup-content" id="popup-img">
+        <div id="popup-caption"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#owl-testimonials").owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            // Image pop-up functionality
+            $('.photo-gallery img').click(function() {
+                var src = $(this).attr('src');
+                var description = $(this).data('description');
+                $('#popup-img').attr('src', src);
+                $('#popup-caption').text(description);
+                $('#overlay').addClass('show');
+                $('#popup').addClass('show');
+            });
+
+            $('#close, #overlay').click(function() {
+                $('#overlay').removeClass('show');
+                $('#popup').removeClass('show');
+            });
+        });
+    </script>
+</body>
+</html>

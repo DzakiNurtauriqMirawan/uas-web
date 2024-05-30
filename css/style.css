@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: orange;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+
+.photo-gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.pic {
+    position: relative;
+    height: 180px; /* Reduced height */
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px lightgray;
+    margin-bottom: 10px;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.pic img:hover {
+    transform: scale(1.1);
+}
+
+/* Fullscreen zoom effect */
+.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    cursor: zoom-out;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Background overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+
+/* Show the overlay */
+.overlay.show {
+    display: block;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup-content {
+    width: 100%;
+    height: auto;
+}
+
+#popup-caption {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+}
